@@ -1,4 +1,3 @@
- //Global variables
  var counter = 0;
  function showQueen(cell){
      if (window.getComputedStyle(cell).backgroundImage == 'none') {
@@ -15,4 +14,14 @@
          cell.style = `background-image: none;`;
          counter--;
      }
+ }
+
+ function changeColor(r, c){
+    var cell = document.getElementById('board');
+    var r1 = r, c1 = c, r2 = r, c2 = c;
+    var r3 = r, c3 = c, r4 = r, c4 = c;
+
+    for(let i = 1; i < 10; i++){
+        
+    }
  }
