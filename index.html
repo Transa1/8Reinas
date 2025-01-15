@@ -4,41 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8 Reinas</title>
-    <style>
-        table, td{
-            border: 1px solid black;
-            border-collapse: collapse;
-            /* only for the table object */
-            width: 500px; 
-            /* only for the td object */
-            height: 50px;
-        }
-        
-        tr:nth-child(odd)
-        td:nth-child(odd),
-        tr:nth-child(even)
-        td:nth-child(even){
-            background-color: #FECE9E;
-        }
-
-        tr:nth-child(odd)
-        td:nth-child(even),
-        tr:nth-child(even)
-        td:nth-child(odd){
-            background-color: #D18B47;
-        }
-    </style>
-
-    <script>
-        function showQueen(cell){
-            cell.style = `
-                        background-image: url(queen.png);
-                        background-size: 3.5rem;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        `;
-        }
-    </script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/functions.js"></script>
 </head>
 <body>
     <table>
