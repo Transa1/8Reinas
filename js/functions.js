@@ -24,12 +24,17 @@
     for(let i = 0; i < 10; i++){
         cell.rows[r].cells[i].style.backgroundColor = 'red';
         cell.rows[i].cells[c].style.backgroundColor = 'red';
-
         if(r1 < 8 && c1 < 8){
             cell.rows[r1++].cells[c1++].style.backgroundColor = 'red';
+        }
+        if(r2 < 8 && c2 >= 0){
             cell.rows[r2++].cells[c2--].style.backgroundColor = 'red';
-            cell.rows[r3--].cells[c3++].style.backgroundColor = 'red';
-            cell.rows[r4--].cells[c4--].style.backgroundColor = 'red';
+        }
+        if(r3 >= 0 && c3 >= 0){
+            cell.rows[r3--].cells[c3--].style.backgroundColor = 'red';
+        }
+        if(r4 >= 0 && c4 < 8){
+            cell.rows[r4--].cells[c4++].style.backgroundColor = 'red';
         }
     }
  }
