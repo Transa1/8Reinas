@@ -42,3 +42,20 @@
  function cleanBoard(){
     document.querySelectorAll('td').forEach(td => td.style.backgroundColor = '');
  }
+
+ function clearImages(){
+    document.querySelectorAll('td').forEach(td => td.style.backgroundImage = 'none');
+ }
+
+ function firstSolution(){
+    clearImages();
+    var cells = document.getElementById('board');
+    showQueen(cells.rows[0].cells[3])
+    showQueen(cells.rows[1].cells[6])
+    showQueen(cells.rows[2].cells[2])
+    showQueen(cells.rows[3].cells[7])
+    showQueen(cells.rows[4].cells[1])
+    showQueen(cells.rows[5].cells[4])
+    showQueen(cells.rows[6].cells[0])
+    showQueen(cells.rows[7].cells[5])
+ }
