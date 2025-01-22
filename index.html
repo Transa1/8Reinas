@@ -109,6 +109,18 @@
             <button onclick="clearImages()" class="mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded shadow hover:bg-red-600 focus:outline-none">
                 Clear Board
             </button>
+            <h3 class="text-center text-md font-medium">Change the queens design if you get tired of them</h3>
+            <select onchange="changeQueen(this.value)" class="p-2 border border-gray-300 rounded">
+                <option value="1">
+                    Chess.com Queen
+                </option>
+                <option value="2">
+                    Queen Elizbeth
+                </option>
+                <option value="3">
+                    The Queen
+                </option>
+            </select>
         </div>        
     </div>
 </body>

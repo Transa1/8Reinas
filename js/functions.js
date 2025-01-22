@@ -1,9 +1,10 @@
  var counter = 0;
+ var queen = 'img/queen.png';
  function showQueen(cell){
      if (window.getComputedStyle(cell).backgroundImage == 'none') {
          if (counter < 8){
              cell.style = `
-                 background-image: url('img/queen.png');
+                 background-image: url('${queen}');
                  background-size: 4rem;
                  background-repeat: no-repeat;
                  background-position: center;
@@ -48,6 +49,14 @@
     counter = 0;
  }
 
+ function changeImages(){
+    document.querySelectorAll('td').forEach(td => {
+        if (td.style.backgroundImage !== '' && td.style.backgroundImage !== 'none') {
+            td.style.backgroundImage = `url('${queen}')`;
+        }
+    });
+ }
+
  function showSolution(solutionNumber) {
     clearImages();
     var cells = document.getElementById('board');
@@ -84,6 +93,23 @@
             showQueen(cells.rows[7].cells[0]);
             break;
         default:
+            break;
+    }
+}
+
+function changeQueen(queenNumber){
+    switch(queenNumber){
+        case "1":
+            queen = 'img/queen.png';
+            changeImages()
+            break;
+        case "2":
+            queen = 'img/queen_elizabeth.png';
+            changeImages()
+            break;
+        case "3":
+            queen = 'img/freddie_mercury.png';
+            changeImages()
             break;
     }
 }
