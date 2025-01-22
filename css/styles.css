@@ -1,10 +1,6 @@
 table, td{
     border: 1px solid black;
     border-collapse: collapse;
-    /* only for the table object */
-    width: 500px; 
-    /* only for the td object */
-    height: 50px;
 }
 
 tr:nth-child(odd)

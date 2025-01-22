@@ -4,7 +4,7 @@
          if (counter < 8){
              cell.style = `
                  background-image: url('img/queen.png');
-                 background-size: 3.5rem;
+                 background-size: 4rem;
                  background-repeat: no-repeat;
                  background-position: center;
                  `;
@@ -45,17 +45,45 @@
 
  function clearImages(){
     document.querySelectorAll('td').forEach(td => td.style.backgroundImage = 'none');
+    counter = 0;
  }
 
- function firstSolution(){
+ function showSolution(solutionNumber) {
     clearImages();
     var cells = document.getElementById('board');
-    showQueen(cells.rows[0].cells[3])
-    showQueen(cells.rows[1].cells[6])
-    showQueen(cells.rows[2].cells[2])
-    showQueen(cells.rows[3].cells[7])
-    showQueen(cells.rows[4].cells[1])
-    showQueen(cells.rows[5].cells[4])
-    showQueen(cells.rows[6].cells[0])
-    showQueen(cells.rows[7].cells[5])
- }
+
+    switch (solutionNumber) {
+        case "1":
+            showQueen(cells.rows[0].cells[3]);
+            showQueen(cells.rows[1].cells[6]);
+            showQueen(cells.rows[2].cells[2]);
+            showQueen(cells.rows[3].cells[7]);
+            showQueen(cells.rows[4].cells[1]);
+            showQueen(cells.rows[5].cells[4]);
+            showQueen(cells.rows[6].cells[0]);
+            showQueen(cells.rows[7].cells[5]);
+            break;
+        case "2":
+            showQueen(cells.rows[0].cells[4]);
+            showQueen(cells.rows[1].cells[1]);
+            showQueen(cells.rows[2].cells[3]);
+            showQueen(cells.rows[3].cells[6]);
+            showQueen(cells.rows[4].cells[2]);
+            showQueen(cells.rows[5].cells[7]);
+            showQueen(cells.rows[6].cells[5]);
+            showQueen(cells.rows[7].cells[0]);
+            break;
+        case "3":
+            showQueen(cells.rows[0].cells[3]);
+            showQueen(cells.rows[1].cells[1]);
+            showQueen(cells.rows[2].cells[6]);
+            showQueen(cells.rows[3].cells[2]);
+            showQueen(cells.rows[4].cells[5]);
+            showQueen(cells.rows[5].cells[7]);
+            showQueen(cells.rows[6].cells[4]);
+            showQueen(cells.rows[7].cells[0]);
+            break;
+        default:
+            break;
+    }
+}

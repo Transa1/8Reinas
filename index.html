@@ -1,108 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8 Queens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/styles.css">
     <script src="./js/functions.js"></script>
 </head>
-<body>
-    <table id="board">
-        <tr>
-            <td onclick="showQueen(this);" onmouseover="changeColor(0,0);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(0,1);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(0,2);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(0,3);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(0,4);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(0,5);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(0,6);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(0,7);" onmouseleave="cleanBoard();"></td>
-        </tr>
-        <tr>
-            <td onclick="showQueen(this);" onmouseover="changeColor(1,0);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(1,1);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(1,2);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(1,3);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(1,4);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(1,5);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(1,6);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(1,7);" onmouseleave="cleanBoard();"></td>
-        </tr>
-        <tr>
-            <td onclick="showQueen(this);" onmouseover="changeColor(2,0);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(2,1);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(2,2);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(2,3);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(2,4);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(2,5);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(2,6);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(2,7);" onmouseleave="cleanBoard();"></td>
-        </tr>
-        <tr>
-            <td onclick="showQueen(this);" onmouseover="changeColor(3,0);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(3,1);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(3,2);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(3,3);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(3,4);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(3,5);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(3,6);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(3,7);" onmouseleave="cleanBoard();"></td>
-        </tr>
-        <tr>
-            <td onclick="showQueen(this);" onmouseover="changeColor(4,0);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(4,1);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(4,2);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(4,3);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(4,4);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(4,5);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(4,6);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(4,7);" onmouseleave="cleanBoard();"></td>
-        </tr>
-        <tr>
-            <td onclick="showQueen(this);" onmouseover="changeColor(5,0);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(5,1);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(5,2);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(5,3);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(5,4);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(5,5);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(5,6);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(5,7);" onmouseleave="cleanBoard();"></td>
-        </tr>
-        <tr>
-            <td onclick="showQueen(this);" onmouseover="changeColor(6,0);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(6,1);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(6,2);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(6,3);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(6,4);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(6,5);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(6,6);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(6,7);" onmouseleave="cleanBoard();"></td>
-        </tr>
-        <tr>
-            <td onclick="showQueen(this);" onmouseover="changeColor(7,0);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(7,1);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(7,2);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(7,3);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(7,4);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(7,5);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(7,6);" onmouseleave="cleanBoard();"></td>
-            <td onclick="showQueen(this);" onmouseover="changeColor(7,7);" onmouseleave="cleanBoard();"></td>
-        </tr>        
-    </table>
-    <select onchange="firstSolution()">
-        <option value="">
-            --
-        </option>
-        <option value="">
-            Solución 1
-        </option>
-        <option value="">
-            Solución 2
-        </option>
-        <option value="">
-            Solución 3
-        </option>
-    </select>
+
+<body class="bg-gray-100">
+    <h1 class="text-center text-4xl pb-6 pt-4">The 8 Queens Problem</h1>
+    <div class="flex items-center justify-center">
+        <div class="w-1/2 flex justify-center">
+            <table id="board" class="w-3/5 aspect-square border border-gray-300 table-fixed">
+                <tr>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(0,0);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(0,1);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(0,2);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(0,3);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(0,4);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(0,5);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(0,6);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(0,7);" onmouseleave="cleanBoard();"></td>
+                </tr>
+                <tr>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(1,0);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(1,1);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(1,2);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(1,3);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(1,4);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(1,5);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(1,6);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(1,7);" onmouseleave="cleanBoard();"></td>
+                </tr>
+                <tr>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(2,0);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(2,1);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(2,2);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(2,3);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(2,4);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(2,5);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(2,6);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(2,7);" onmouseleave="cleanBoard();"></td>
+                </tr>
+                <tr>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(3,0);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(3,1);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(3,2);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(3,3);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(3,4);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(3,5);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(3,6);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(3,7);" onmouseleave="cleanBoard();"></td>
+                </tr>
+                <tr>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(4,0);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(4,1);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(4,2);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(4,3);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(4,4);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(4,5);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(4,6);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(4,7);" onmouseleave="cleanBoard();"></td>
+                </tr>
+                <tr>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(5,0);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(5,1);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(5,2);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(5,3);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(5,4);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(5,5);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(5,6);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(5,7);" onmouseleave="cleanBoard();"></td>
+                </tr>
+                <tr>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(6,0);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(6,1);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(6,2);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(6,3);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(6,4);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(6,5);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(6,6);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(6,7);" onmouseleave="cleanBoard();"></td>
+                </tr>
+                <tr>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(7,0);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(7,1);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(7,2);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(7,3);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(7,4);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(7,5);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(7,6);" onmouseleave="cleanBoard();"></td>
+                    <td onclick="showQueen(this);" onmouseover="changeColor(7,7);" onmouseleave="cleanBoard();"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="w-1/3 flex flex-col justify-center items-center space-y-4">
+            <h2 class="text-center text-lg font-medium">If you can't solve the problem, check one of these solutions, dumbass</h2>
+            <select onchange="showSolution(this.value)" class="p-2 border border-gray-300 rounded">
+                <option value="">Normal Mode</option>
+                <option value="1">Solución 1</option>
+                <option value="2">Solución 2</option>
+                <option value="3">Solución 3</option>
+            </select>
+            <button onclick="clearImages()" class="mt-4 px-4 py-2 bg-red-500 text-white font-semibold rounded shadow hover:bg-red-600 focus:outline-none">
+                Clear Board
+            </button>
+        </div>        
+    </div>
 </body>
+
+<footer class="w-full bg-gray-800 text-white py-4 text-center fixed bottom-0">
+    <h4 class="text-sm">Developed by Kevin Martínez</h4>
+</footer>
+
 </html>
