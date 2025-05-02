@@ -12,8 +12,7 @@
   <h1 class="text-center text-4xl pb-6 pt-4">The 8 Queens Problem</h1>
   <div class="flex items-center justify-center">
     <div class="w-1/2 flex justify-center">
-      <table id="board" class="w-3/5 aspect-square border border-gray-300 table-fixed">
-      </table>
+      <table id="board" class="w-3/5 aspect-square border border-gray-300 table-fixed"></table>
     </div>
     <div class="w-1/3 flex flex-col justify-center items-center space-y-4">
       <h2 class="text-center text-lg font-medium">If you can't solve the problem, check one of these solutions</h2>
@@ -43,6 +42,12 @@
       </button>
       <button onclick="resetColors()" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">
         Reset Colors
+      </button>
+
+      <h3 class="text-center text-md font-medium">Blocked Cell Color</h3>
+      <input type="color" id="blockedColorPicker" class="w-20 h-10 border rounded" />
+      <button onclick="applyBlockedColor()" class="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600">
+        Apply Blocked Color
       </button>
     </div>
   </div>
