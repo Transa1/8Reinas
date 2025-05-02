@@ -1,115 +1,133 @@
- var counter = 0;
- var queen = 'img/queen.png';
- function showQueen(cell){
-     if (window.getComputedStyle(cell).backgroundImage == 'none') {
-         if (counter < 8){
-             cell.style = `
-                 background-image: url('${queen}');
-                 background-size: 4rem;
-                 background-repeat: no-repeat;
-                 background-position: center;
-                 `;
-             counter++;
-         }
-     } else {
-         cell.style = `background-image: none;`;
-         counter--;
-     }
- }
+var counter = 0;
+var queen = 'img/queen.png';
+const boardSize = 8;
 
- function changeColor(r, c){
-    var cell = document.getElementById('board');
-    var r1 = r, c1 = c, r2 = r, c2 = c;
-    var r3 = r, c3 = c, r4 = r, c4 = c;
+let lightColor = localStorage.getItem('lightColor') || '#FECE9E';
+let darkColor = localStorage.getItem('darkColor') || '#D18B47';
 
-    for(let i = 0; i < 10; i++){
-        cell.rows[r].cells[i].style.backgroundColor = 'red';
-        cell.rows[i].cells[c].style.backgroundColor = 'red';
-        if(r1 < 8 && c1 < 8){
-            cell.rows[r1++].cells[c1++].style.backgroundColor = 'red';
-        }
-        if(r2 < 8 && c2 >= 0){
-            cell.rows[r2++].cells[c2--].style.backgroundColor = 'red';
-        }
-        if(r3 >= 0 && c3 >= 0){
-            cell.rows[r3--].cells[c3--].style.backgroundColor = 'red';
-        }
-        if(r4 >= 0 && c4 < 8){
-            cell.rows[r4--].cells[c4++].style.backgroundColor = 'red';
-        }
+window.onload = () => {
+  generateBoard();
+  applyBoardColors();
+  document.getElementById('lightColorPicker').value = lightColor;
+  document.getElementById('darkColorPicker').value = darkColor;
+};
+
+function generateBoard() {
+  const board = document.getElementById('board');
+  board.innerHTML = '';
+  for (let r = 0; r < boardSize; r++) {
+    const row = board.insertRow();
+    for (let c = 0; c < boardSize; c++) {
+      const cell = row.insertCell();
+      cell.onclick = () => showQueen(cell);
+      cell.onmouseover = () => changeColor(r, c);
+      cell.onmouseleave = cleanBoard;
     }
- }
-
- function cleanBoard(){
-    document.querySelectorAll('td').forEach(td => td.style.backgroundColor = '');
- }
-
- function clearImages(){
-    document.querySelectorAll('td').forEach(td => td.style.backgroundImage = 'none');
-    counter = 0;
- }
-
- function changeImages(){
-    document.querySelectorAll('td').forEach(td => {
-        if (td.style.backgroundImage !== '' && td.style.backgroundImage !== 'none') {
-            td.style.backgroundImage = `url('${queen}')`;
-        }
-    });
- }
-
- function showSolution(solutionNumber) {
-    clearImages();
-    var cells = document.getElementById('board');
-
-    switch (solutionNumber) {
-        case "1":
-            showQueen(cells.rows[0].cells[3]);
-            showQueen(cells.rows[1].cells[6]);
-            showQueen(cells.rows[2].cells[2]);
-            showQueen(cells.rows[3].cells[7]);
-            showQueen(cells.rows[4].cells[1]);
-            showQueen(cells.rows[5].cells[4]);
-            showQueen(cells.rows[6].cells[0]);
-            showQueen(cells.rows[7].cells[5]);
-            break;
-        case "2":
-            showQueen(cells.rows[0].cells[4]);
-            showQueen(cells.rows[1].cells[1]);
-            showQueen(cells.rows[2].cells[3]);
-            showQueen(cells.rows[3].cells[6]);
-            showQueen(cells.rows[4].cells[2]);
-            showQueen(cells.rows[5].cells[7]);
-            showQueen(cells.rows[6].cells[5]);
-            showQueen(cells.rows[7].cells[0]);
-            break;
-        case "3":
-            showQueen(cells.rows[0].cells[3]);
-            showQueen(cells.rows[1].cells[1]);
-            showQueen(cells.rows[2].cells[6]);
-            showQueen(cells.rows[3].cells[2]);
-            showQueen(cells.rows[4].cells[5]);
-            showQueen(cells.rows[5].cells[7]);
-            showQueen(cells.rows[6].cells[4]);
-            showQueen(cells.rows[7].cells[0]);
-            break;
-        default:
-            break;
-    }
+  }
 }
 
-function changeQueen(queenNumber){
-    switch(queenNumber){
-        case "1":
-            queen = 'img/queen.png';
-            changeImages()
-            break;
-        case "2":
-            queen = 'img/queen_elizabeth.png';
-            changeImages()
-            break;
-        case "3":
-            queen = 'img/freddie_mercury.png';
-            changeImages()
-            break;
+function applyBoardColors() {
+  const cells = document.querySelectorAll('#board td');
+  cells.forEach((td, index) => {
+    const row = Math.floor(index / boardSize);
+    const col = index % boardSize;
+    td.style.backgroundColor = (row + col) % 2 === 0 ? lightColor : darkColor;
+  });
+}
+
+function applyCustomColors() {
+  const light = document.getElementById('lightColorPicker').value;
+  const dark = document.getElementById('darkColorPicker').value;
+  setColors(light, dark);
+}
+
+function setColors(light, dark) {
+  lightColor = light;
+  darkColor = dark;
+  localStorage.setItem('lightColor', light);
+  localStorage.setItem('darkColor', dark);
+  applyBoardColors();
+}
+
+function resetColors() {
+  localStorage.removeItem('lightColor');
+  localStorage.removeItem('darkColor');
+  lightColor = '#FECE9E';
+  darkColor = '#D18B47';
+  document.getElementById('lightColorPicker').value = lightColor;
+  document.getElementById('darkColorPicker').value = darkColor;
+  applyBoardColors();
+}
+
+function showQueen(cell) {
+  if (window.getComputedStyle(cell).backgroundImage === 'none') {
+    if (counter < 8) {
+      cell.style.backgroundImage = `url('${queen}')`;
+      cell.style.backgroundSize = '4rem';
+      cell.style.backgroundRepeat = 'no-repeat';
+      cell.style.backgroundPosition = 'center';
+      counter++;
     }
+  } else {
+    cell.style.backgroundImage = 'none';
+    counter--;
+  }
+}
+
+function changeColor(r, c) {
+  const board = document.getElementById('board');
+  for (let i = 0; i < boardSize; i++) {
+    if (board.rows[r]) board.rows[r].cells[i].style.backgroundColor = 'red';
+    if (board.rows[i]) board.rows[i].cells[c].style.backgroundColor = 'red';
+
+    if (r + i < boardSize && c + i < boardSize) board.rows[r + i].cells[c + i].style.backgroundColor = 'red';
+    if (r + i < boardSize && c - i >= 0) board.rows[r + i].cells[c - i].style.backgroundColor = 'red';
+    if (r - i >= 0 && c + i < boardSize) board.rows[r - i].cells[c + i].style.backgroundColor = 'red';
+    if (r - i >= 0 && c - i >= 0) board.rows[r - i].cells[c - i].style.backgroundColor = 'red';
+  }
+}
+
+function cleanBoard() {
+  applyBoardColors();
+}
+
+function clearImages() {
+  document.querySelectorAll('td').forEach(td => td.style.backgroundImage = 'none');
+  counter = 0;
+}
+
+function changeImages() {
+  document.querySelectorAll('td').forEach(td => {
+    if (td.style.backgroundImage && td.style.backgroundImage !== 'none') {
+      td.style.backgroundImage = `url('${queen}')`;
+    }
+  });
+}
+
+function showSolution(solutionNumber) {
+  clearImages();
+  const cells = document.getElementById('board');
+  const solutions = {
+    "1": [[0, 3], [1, 6], [2, 2], [3, 7], [4, 1], [5, 4], [6, 0], [7, 5]],
+    "2": [[0, 4], [1, 1], [2, 3], [3, 6], [4, 2], [5, 7], [6, 5], [7, 0]],
+    "3": [[0, 3], [1, 1], [2, 6], [3, 2], [4, 5], [5, 7], [6, 4], [7, 0]],
+  };
+  if (solutions[solutionNumber]) {
+    solutions[solutionNumber].forEach(([r, c]) => showQueen(cells.rows[r].cells[c]));
+  }
+}
+
+function changeQueen(queenNumber) {
+  switch (queenNumber) {
+    case "1":
+      queen = 'img/queen.png';
+      break;
+    case "2":
+      queen = 'img/queen_elizabeth.png';
+      break;
+    case "3":
+      queen = 'img/freddie_mercury.png';
+      break;
+  }
+  changeImages();
 }
